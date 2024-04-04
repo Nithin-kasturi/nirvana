@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+.box{
+    position:relative;   
+    overflow: hidden;
+    background:white;
+    border-radius: 16px;
+}
+.box::before{
+    content: '';
+    position: absolute;
+    height: 1000%;
+    width: 1000%;
+    background: linear-gradient(white,black);
+    animation: rotation 20s linear infinite;
+}
+.box::after{
+    content: '';
+    position: absolute;
+    background: black;
+    inset: 1px;
+    border-radius: 16px;
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
